@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" HREF="../../icon.png" type="image/png">
+    <link rel="stylesheet" href="../../style.css" type="text/css">
+    <title>Βρείτε τον Light</title>
+</head>
+<body>
+    <div class="container">
+
+        <h1>Βρείτε τον Light</h1>
+        <hr>
+        <div>Μπορείτε να βρείτε τους λογαριασμούς του Light στο Spotify και στο Apple Music εδώ:</div>
+        <br>
+        <table>
+            <tr>
+                <td style="border-right: 3px solid #5F021F">
+                    <a href="https://open.spotify.com/artist/1UdbiTrv73Dp7F0s3OHmn2?si=D7doyznBSyy37KDzdUqvIw" target=”_blank”><img src="../pictures/spotify.png" alt="Spotify" style="width:50%; height:50%;"></a>
+                </td>
+                <td style="text-align: center;">
+                    <a href="https://music.apple.com/us/artist/light/1453745564" target=”_blank”><img src="../pictures/apple_music.png" alt="Apple Music" style="width:50%; height:50%;"></a>                
+                </td>
+            </tr>
+            <tr>
+                <td><a href="https://open.spotify.com/artist/1UdbiTrv73Dp7F0s3OHmn2?si=D7doyznBSyy37KDzdUqvIw" target=”_blank”>Spotify</a></td>
+                <td><a href="https://music.apple.com/us/artist/light/1453745564" target=”_blank”>Apple Music</a></td>
+            </tr>
+        </table>
+        <br><br>
+        <div>Μπορείτε να βρείτε τους λογαριασμούς του Yung light στα κοινωνικα δίκτυα εδώ:</div>
+        <div>
+            <map name="map1"> 
+                <area  
+                   href="https://www.youtube.com/channel/UC8ftM8eQ2YKx0VxX9DwrzlQ"  target=”_blank” alt="Image map test" shape="rect" 
+                coords="12,10,100,98">
+                <area  
+                   href="https://twitter.com/"  target=”_blank” alt="Image map test" shape="rect" 
+                coords="106,10,192,98"> 
+                <area  
+                   href="https://www.instagram.com/nerogreco/?hl=el/"  target=”_blank” alt="Image map test" shape="rect" 
+                coords="14,105,102,194"> 
+                <area  
+                   href="https://www.facebook.com/Primo-The-Brand-661178071012756"  target=”_blank” alt="Image map test" shape="rect" 
+                coords="106,104,192,193">  
+            </map> 
+                <img src="../pictures/social1.png"  alt="Image with map"    usemap="#map1">
+        </div>
+    </div>
+    
+    <footer>
+        <input type="button" id="toggle" class="toggle" value="Open navigation">
+        <div id="navigation" class="footer-navigation">
+            <p>
+                <a href="../../index.html">Αρχική</a>
+                <a href="../../light/light.html">Light</a>
+                <span>Mad Clip</span>
+                <a href="../../competition/competition.html">Διαγωνισμός</a>
+                <a href="../../review/review.html">Αξιολόγηση</a>
+                <a href="../../contact_us/contact_us.html">Επικοινωνία</a>
+            </p>
+        </div>
+        <div class="footer-div">Δημήτρης Φουσέκης p21181 | Πάρης Πολυχρονόπουλος p21141</div>
+    </footer>
+    <script>
+        document.getElementById("toggle").addEventListener("click", function () {toggle()});
+        function toggle() {
+            var menu = document.getElementById("navigation");
+            if (menu.style.display == "block") {
+                menu.style.display = "none";
+                document.getElementById("toggle").value = "Open navigation";
+            } else {
+                menu.style.display = "block";
+                document.getElementById("toggle").value = "Close navigation";
+            }
+        }
+    </script>
+</body>
+</html>

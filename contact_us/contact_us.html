@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <title>Επικοινωνία</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Επικοινωνία</h1>
+        <hr>
+        <div class="antonis">
+            <div>Αν θέλετε:</div>
+            <ul>
+                <li>Να αναφέρετε κάποιο πρόβλημα με την σελίδα</li>
+                <li>Να αναφέρετε κάποιο λάθος στις πληροφορίες</li>
+                <li>Να κάνετε κάποια πρόταση για προσθήκη στην σελίδα</li>
+            </ul>
+            <div>Ή οτιδήποτε άλλο, μπορείτε να το κάνετε εδώ:
+                <ul>
+                    <li><a href="mailto:paraskevaspol@yahoo.gr?subject = Feedback&body = Message">Πάρης Πολυχρονόπουλος</a></li>
+                    <li><a href ="mailto:dimitris.fousekis.159@gmail.com?subject = Feedback&body = Message">Δημήτρης Φουσέκης</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <input type="button" id="toggle" class="toggle" value="Open navigation">
+        <div id="navigation" class="footer-navigation">
+            <p>
+                <a href="../index.html">Αρχική</a>
+                <a href="../light/light.html">Light</a>
+                <a href="../mad_clip/mad_clip.html">Mad Clip</a>
+                <a href="../competition/competition.html">Διαγωνισμός</a>
+                <a href="../review/review.html">Αξιολόγηση</a>
+                <span>Επικοινωνία</span>
+            </p>
+        </div>
+        <div class="footer-div">Δημήτρης Φουσέκης p21181 | Πάρης Πολυχρονόπουλος p21141</div>
+    </footer>
+    <script>
+        document.getElementById("toggle").addEventListener("click", function () {toggle()});
+        function toggle() {
+            var menu = document.getElementById("navigation");
+            if (menu.style.display == "block") {
+                menu.style.display = "none";
+                document.getElementById("toggle").value = "Open navigation";
+            } else {
+                menu.style.display = "block";
+                document.getElementById("toggle").value = "Close navigation";
+            }
+        }
+    </script>
+</body>
+</html>

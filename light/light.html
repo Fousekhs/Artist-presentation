@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" HREF="../icon.png" type="image/png"> 
+    <link rel="stylesheet" type="text/css" href="../style.css"> 
+    <title>Drake</title>
+    <style>
+        img {
+            margin: 0 auto;
+            width: 600px;
+            height: 600px;
+            float: center;
+        }
+
+        td {
+            padding: 5px;
+        }
+
+        a {
+            color: #5F021F;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Χρήστος Light Ιωαννίδης</h1>
+        <hr>
+        <table>
+            <tr>
+                <td><a href="albums/albums.html">Δισκογραφία</a></td>
+                <td><a href="general_info/general_info.html">Γενικές πληροφορίες</a></td>
+                <td><a href="find_him/find_him.html">Βρείτε τον light εδώ</a></td>
+            </tr>
+        </table>
+        <div>
+            <img src="pictures/light.png">
+        </div>  
+    </div>
+    <footer>
+        <input type="button" id="toggle" class="toggle" value="Open navigation">
+        <div id="navigation" class="footer-navigation">
+            <p>
+                <a href="../index.html">Αρχική</a>
+                <span>Light</span>
+                <a href="../mad_clip/mad_clip.html">Mad Clip</a>
+                <a href="../competition/competition.html">Διαγωνισμός</a>
+                <a href="../review/review.html">Αξιολόγηση</a>
+                <a href="../contact_us/contact_us.html">Επικοινωνία</a>
+            </p>
+        </div>
+        <div class="footer-div">Δημήτρης Φουσέκης p21181 | Πάρης Πολυχρονόπουλος p21141</div>
+    </footer>
+    <script>
+        document.getElementById("toggle").addEventListener("click", function () {toggle()});
+        function toggle() {
+            var menu = document.getElementById("navigation");
+            if (menu.style.display == "block") {
+                menu.style.display = "none";
+                document.getElementById("toggle").value = "Open navigation";
+            } else {
+                menu.style.display = "block";
+                document.getElementById("toggle").value = "Close navigation";
+            }
+        }
+    </script>
+</body>
+</html>

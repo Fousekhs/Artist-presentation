@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" HREF="../../icon.png" type="image/png">  
+    <link rel="stylesheet" href="../../style.css" type="text/css">
+    <title>General Information</title>
+    <style>
+
+        p {
+            text-align: left;
+        }
+
+        p:first-child::first-letter {
+            color: Black;
+
+            font-size: 3rem;
+            float: left;
+            line-height: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <h1>Γενικές πληροφορίες</h3>
+        <br>
+        <hr>
+        <table>
+            <tr>
+                <td colspan="2">
+                    <p>
+                        Ο Light (πραγματικό όνομα: Χρήστος Ιωαννίδης), είναι Έλληνας ράπερ, 
+                        ιδιοκτήτης και μέλος της δισκογραφικής εταιρείας Capital Music.
+                        Γεννήθηκε το 1995 στην Θεσσαλονίκη και κατάγεται από την Κένυα από την πλευρά της μητέρας του.
+                        Στην ηλικία των 17 ετών κυκλοφόρισε μερικά απο τα πρώτα του μουσίκά κομμάτια και έτσι ξεκίνησε την καριέρα του.
+                    </p>
+                </td>
+                <td>
+                    <img src="../pictures/primo-the-brand.png" alt="primo-the-brand">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <p>
+                        Το 2020 υπήρξε μια πολύ σημαντική χρονιά για τον ίδιο αφού τα κομμάτια στα οποία συμμετείχε
+                        τόσο ως δημιουργός όσο και με άλλους καλλιτέχνες (MadClip, Hawk, Billy Sio, Atc Nico κλπ.)
+                        γνώρισαν ιδιαίτερη απήχηση στο κοινό (Slang.Iced out, Xiliometra). Στις 18 Δεκεμβρίου και 
+                        στις 21 Δεκεμβρίου -στο Spotify και στο Youtube αντίστοιχα- δημοσιεύθηκε το κομμάτι του Voodoo 
+                        σε συνεργασία με τον Hawk καθώς και ο κοινός τους δίσκος με την ονομασία Supernova στις 25 Δεκεμβρίου 
+                        ο οποίος κατέκτησε την 3η θέση στα 10 πιο δημοφιλή album παγκοσμίως.
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td><img src="../pictures/light2.png" alt="Light Photo" height="75%" width="75%"></td>
+                <td colspan="2">
+                    <p>
+                        Το 2021, ο Light έβγαλε το τρίτο του στούντιο άλμπουμ, με τίτλο "Immortale", με συμμετοχές απο τους 
+                        Stamatiz, Vasilakys, Filyra, Ioyliaz κ.α. Ο δίσκος δέχθηκε θετικές κριτικές απο το κοινό, 
+                        με το σινγκλ "Τι Φοβάσαι" να παραμένει το διασημότερο κομμάτι του δίσκου, σε συνδυασμό με το μουσικό βίντεο που δημοσιεύτηκε.
+                    </p>
+                </td>
+            </tr>
+        </table>
+        <div style="text-align: right;"><a href="https://el.wikipedia.org/wiki/Yung_Light" target=”_blank”>Source</a></div>
+        <br>
+    </div>
+    <footer>
+        <input type="button" id="toggle" class="toggle" value="Open navigation">
+        <div id="navigation" class="footer-navigation">
+            <p>
+                <a href="../../index.html">Αρχική</a>
+                <span>Light</span>
+                <a href="../../mad_clip/mad_clip.html">Mad Clip</a>
+                <a href="../../competition/competition.html">Διαγωνισμός</a>
+                <a href="../../review/review.html">Αξιολόγηση</a>
+                <a href="../../contact_us/contact_us.html">Επικοινωνία</a>
+            </p>
+        </div>
+        <div class="footer-div">Δημήτρης Φουσέκης p21181 | Πάρης Πολυχρονόπουλος p21141</div>
+    </footer>
+    <script>
+        document.getElementById("toggle").addEventListener("click", function () {toggle()});
+        function toggle() {
+            var menu = document.getElementById("navigation");
+            if (menu.style.display == "block") {
+                menu.style.display = "none";
+                document.getElementById("toggle").value = "Open navigation";
+            } else {
+                menu.style.display = "block";
+                document.getElementById("toggle").value = "Close navigation";
+            }
+        }
+    </script>
+</body>
+</html>

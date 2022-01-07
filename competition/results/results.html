@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <link rel="icon" type="image/gif" href="../unipi.gif">
+    <title>Αποτελέσματα Διαγωνισμού</title>
+</head>
+<body>
+    <div class="container">
+        <div class="head">
+            <em>Τα Αποτελέσματα του διαγωνισμού είναι:</em>
+        </div>
+        <table class="results-table">
+            <tr>
+                <td id="over_eight" class="number"></td>
+                <td id="mean_value" class="number"></td>
+            </tr>
+            <tr>
+                <td class="results-subtext"><hr></td>
+                <td class="results-subtext"><hr></td>
+            </tr>
+            <tr>
+                <td class="results-subtext"><em><span id="num_over_eight"></span> βαθμολογία πάνω από 8</em></td>
+                <td class="results-subtext"><em>Μέσος όρος της βαθμολογίας όλων των φοιτητών</em></td>
+            </tr>
+        </table>
+        <table>
+            <tr>
+                <td class="results-subtext">
+                    <span id="number_AM"></span> μητρώου <span id="number_of_studens"></span> με τον μεγαλύτερο βαθμό(<span id="max_grade" class="max_grade"></span>)
+                </td>
+            </tr>
+            <tr>
+                <td class="results-subtext"><hr></td>
+            </tr>
+            <tr>
+                <td class="top_students" id="top_students"></td>
+            </tr>
+        </table>
+    </div>
+    <script>
+        // display the corrext values
+        let n = sessionStorage.getItem("number_best_students");
+        document.getElementById("number_AM").innerHTML = n > 1 ? "Οι αριθμοί" : "Ο αριθμός";
+        document.getElementById("number_of_studens").innerHTML = n > 1 ? "των φοιτητών" : "του φοιτητή";
+        let n_o_e = sessionStorage.getItem("over_eight");
+        document.getElementById("over_eight").innerHTML = n_o_e;
+        document.getElementById("num_over_eight").innerHTML = n_o_e > 1 ? "Φοιτητές είχαν" : "Φοιτητής είχε";
+        document.getElementById("mean_value").innerHTML = sessionStorage.getItem("mean_value");
+        document.getElementById("max_grade").innerHTML = sessionStorage.getItem("top_grade");
+        document.getElementById("top_students").innerHTML = sessionStorage.getItem("best_students");
+    </script>
+</body>
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <link rel="icon" type="image/png" href="../icon.png"> 
+    <title>Competition</title>
+    <style>
+        hr {
+            width: 40%;
+            height: 1px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="head">
+            <h1>Διαγωνισμός</h1>
+            <hr>
+        </div>
+        <div id="brakes-1">
+            <br><br><br>
+        </div>
+        <table id="competitor-number" class="form-container rounded-corners">
+            <tr>
+                <td>
+                    <label for="Competitors">Αριθμός Διαγωνιζόμενων:</label>
+                </td>
+                <td>
+                    <input type="number" id="Competitors" name="Competitors" min="0" max="250" required>
+                </td>
+            </tr>
+            <tr>
+                <td class="buttons" colspan="2">
+                    <input type="button" value="Επόμενο" id="next" onclick="Next()">
+                </td>
+            </tr>
+        </table>
+        <div id="brakes-2"><br><br></div>
+        <div id="form-container" class="form-container rounded-corners second-input">
+            <table>
+                <tr>
+                    <td colspan="2">
+                        <div class="form-header" id="header">Εισάγετε τα στοιχεία των διαγωνιζόμενων</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <hr>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="username">Username: </label>
+                    </td>
+                    <td>
+                        <input type="text" id="username">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input type="button" id="count-btn" onclick="count()" value="">
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="Error" id="Error"></div>
+        <div id="post_count" class="form-container rounded-corners third-input">
+            <div id="post_count_header">Η εισαγωγή των στοιχείων ήταν επιτυχής</div>
+            <input type="button" id="results" value="Δείτε τους νικητές" onclick="window.open('results/results.html', '_blank', 'toolbar=0,location=0,menubar=0');">
+        </div>
+    </div>
+    <footer>
+        <input type="button" id="toggle" class="toggle" value="Open navigation">
+        <div id="navigation" class="footer-navigation">
+            <p>
+                <a href="../index.html">Αρχική</a>
+                <a href="../light/light.html">Light</a>
+                <a href="../mad_clip/mad_clip.html">Mad Clip</a>
+                <a href="../competition/competition.html">Διαγωνισμός</a>
+                <a href="../review/review.html">Αξιολόγηση</a>
+                <span>Επικοινωνία</span>
+            </p>
+        </div>
+        <div class="footer-div">Δημήτρης Φουσέκης p21181 | Πάρης Πολυχρονόπουλος p21141</div>
+    </footer>
+    <script>
+
+        let n = 0;
+        let number;
+        let n_2003 = 0;
+        let winners = "";
+
+        // takes care of the website's apperance after the data collection is completed
+        function final_form() {
+
+            document.getElementById("form-container").style.display = "none";
+            document.getElementById("post_count").style.display = "block";
+        }
+
+        // stores the data that need to be presented in the next website in the sessionStorage
+        function send_data() {
+            sessionStorage.setItem("number_of_winners", n_2003);
+            sessionStorage.setItem("usernames", winners);
+        }
+
+        // calls final_form and send_data functions after the data collection is completed
+        function post_count() {
+            alert(n_2003);
+            alert(winners);
+            final_form();
+            send_data();
+        }
+
+        // updates the count for the input button
+        function update_count_html() {
+            document.getElementById("Error").innerHTML = "";
+            document.getElementById("count-btn").value = (n + 1) + "/" + number;
+            document.getElementById("username").value = "";
+        }
+
+        function proccess(username, year) {
+            if (year == 2003) {
+                n_2003++;
+                winners += username + "\n";
+            }
+        }
+
+        // takes care of the data collection
+        function count() {
+            let username = document.getElementById("username").value;
+            let year_of_birth = prompt("Ιασω " + username + ", ποιο το έτος γενησσής σας; κοκλα");
+            proccess(username, year_of_birth);
+            n++;
+            update_count_html();
+            if (number <= n){ post_count(); }
+        }
+        
+        // changes the website's apperance for the data collection
+        function second_form() {
+            document.getElementById("Competitors").disabled = true;
+            document.getElementById("form-container").style.display = "block";
+            document.getElementById("brakes-2").style.display = "block"
+            document.getElementById("count-btn").value = (n + 1) + " / " + number; 
+        }
+
+        // checks if the user input is correct and moves user to the next stage
+        function Next() {
+            number = document.getElementById("Competitors").value;
+
+            if (number > 0) {
+                second_form();
+                return;
+            } 
+            document.getElementById("Error").innerHTML = "Ο αριθμός των διαγωνιζόμενων πρέπει να είναι τουλάχιστον 1"; 
+        }
+
+        document.getElementById("toggle").addEventListener("click", function () {toggle()});
+        function toggle() {
+            var menu = document.getElementById("navigation");
+            if (menu.style.display == "block") {
+                menu.style.display = "none";
+                document.getElementById("toggle").value = "Open navigation";
+            } else {
+                menu.style.display = "block";
+                document.getElementById("toggle").value = "Close navigation";
+            }
+        }
+    </script>
+</body>
+</html>
