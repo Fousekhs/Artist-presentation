@@ -13,18 +13,6 @@ body {
     margin: 0 auto;
 }
 
-.info::first-letter {
-    color: Black;
-
-    font-size: 3rem;
-    float: left;
-    line-height: 1;
-}
-
-.info {
-    text-align: left;
-}
-
 h1 {
     text-align: center;
 }
