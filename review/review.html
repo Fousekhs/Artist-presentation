@@ -4,10 +4,72 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="../style.css">
     <link rel="icon" type="image/png" href="../icon.png">
-    <title>Review</title>
+    <title>Αξιολόγηση Δίσκου</title>
+    <style>
+        .submit {
+            background-color: white;
+            color: #5F021F;
+            border: 1px solid #5F021F;
+            font-size: 18px;
+            border-radius: 8px;
+        }
+    </style>
 </head>
 <body>
-    <div class="container"></div>
+    <div class="container">
+        <h1>Δώστε μας την γνώμη σας για τον δίσκο του <a href="../light/light.html">Light</a>, Supernova</h1>
+        <img src="supernova.png" height="50%" width="50%">
+        <form id="supernova-review" method="post" action="mydata.php">
+            <input type="hidden" name="name" id="name" value="Supernova">
+            <input type="hidden" name="release_date" id="release_date" value="25/12/2020">
+            <table>
+                <tr>
+                    <td>
+                        <label for="review-by">Ψευδώνυμο:</label>
+                    </td>
+                    <td>
+                        <input type="text" name="review-by" id="review-by" size="40">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="stars">Rating:</label>
+                        <input type="hidden" name="stars" value="0" id="stars">
+                    </td>
+                    <td>
+                        <table>
+                            <tr>
+                                <td>
+                                    <img src="star/patric-thumbs-down.png" id="star0" onmouseout="normalImg()" onmouseover="change_img(0)" onclick="setStars(1)" alt="submit" width="48" height="48">
+                                </td>
+                                <td>
+                                    <img src="star/patric-thumbs-down.png" id="star1" onmouseout="normalImg()" onmouseover="change_img(1)" onclick="setStars(2)" alt="submit" width="48" height="48">
+                                </td>
+                                <td>
+                                    <img src="star/patric-thumbs-down.png" id="star2" onmouseout="normalImg()" onmouseover="change_img(2)" onclick="setStars(3)" alt="submit" width="48" height="48">
+                                </td>
+                                <td>
+                                    <img src="star/patric-thumbs-down.png" id="star3" onmouseout="normalImg()" onmouseover="change_img(3)" onclick="setStars(4)" alt="submit" width="48" height="48">
+                                </td>
+                                <td>
+                                    <img src="star/patric-thumbs-down.png" id="star4" onmouseout="normalImg()" onmouseover="change_img(4)" onclick="setStars(5)" alt="submit" width="48" height="48">
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="comments">Σχόλια:</label>
+                    </td>
+                    <td>
+                        <textarea name="comments" id="comments" rows="4" cols="40"></textarea>
+                    </td>
+                </tr>
+            </table>
+            <input type="submit" id="submit" class="submit" value="Υποβολή">
+        </form>
+    </div>
     <footer>
         <input type="button" id="toggle" class="toggle" value="Open navigation">
         <div id="navigation" class="footer-navigation">
@@ -23,6 +85,51 @@
         <div class="footer-div">Δημήτρης Φουσέκης p21181 | Πάρης Πολυχρονόπουλος p21141 | <img src="../unipi.gif" style="height: 17px; width: 18px"> ΠΑ.ΠΕΙ.</div>
     </footer>
     <script>
+
+        let clicked = false;
+        
+        document.getElementById("submit").addEventListener("click", function () {post_data()});
+        function post_data() {
+            document.getElementById("review").submit();
+        }
+
+        function setStars(n) {
+            clicked = true;
+            let num = document.getElementById("stars").value;
+            if (clicked == false || n != num) {
+                document.getElementById("stars").value = n;
+                change_img();
+            } else {
+                document.getElementById("stars").value = 0;
+                clicked = false;
+            }
+        }
+
+        function change_img(n) {
+            for (let i = 0; i <= n; i++) {
+                document.getElementById("star" + i).src = "star/patric.png";
+            }
+            for (let i = n + 1; i <= 5; i++) {
+                document.getElementById("star" + i).src = "star/patric-thumbs-down.png";
+            }
+        }
+
+        function normalImg() {
+            if (clicked == false) {
+                for (let i = 0; i < 5; i++) {
+                    document.getElementById("star" + i).src = "star/patric-thumbs-down.png";
+                }
+            } else {
+                let n = document.getElementById("stars").value
+                for (let i = 0; i < n; i++) {
+                    document.getElementById("star" + i).src = "star/patric.png";
+                }
+                for (let i = n; i <= 5; i++) {
+                    document.getElementById("star" + i).src = "star/patric-thumbs-down.png";
+                }
+            }
+        }
+
         document.getElementById("toggle").addEventListener("click", function () {toggle()});
         function toggle() {
             var menu = document.getElementById("navigation");
