@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <link rel="icon" type="image/png" href="../icon.png">
+    <title>Αποτελέσματα Διαγωνισμού</title>
+    <style>
+        .prize {
+            color: goldenrod;
+        }
+
+        .results {
+            color: gray;
+            font-weight: 900;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h3 id="header"></h3>
+        <hr style="background-color: lightgrey; color: lightgrey; height: 0.01rem; width: 25%;">
+        <table>
+            <tr>
+                <td id="usernames">Με username</td>
+            </tr>
+            <tr>
+                <td id="results" class="results">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Κερδίσατε τα <span class="prize">διπλά εισιτήρια!</span>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <footer>
+        <div class="footer-div">Δημήτρης Φουσέκης p21181 | Πάρης Πολυχρονόπουλος p21141 | <img src="../unipi.gif" style="height: 17px; width: 18px"> ΠΑ.ΠΕΙ.</div>
+    </footer>
+    <script>
+
+        let winners = sessionStorage.getItem("usernames");
+        let n = sessionStorage.getItem("number_of_winners");
+        if (n > 0) {
+            document.getElementById("usernames").innerHTML += n == 1 ? ":" : "s:"
+            document.getElementById("header").innerHTML = "Συγχαρητήρια " + (n == 1 ? "στον " : "στους ")  + n + (n == 1 ? " τυχερό " : "τυχερούς ") + " που " + (n == 1 ? "γεννήθηκε " : "γεννήθηκαν ") + " το 2003!!"
+            document.getElementById("results").innerHTML = winners;
+        } else {
+            // tha doume
+        }
+    </script>
+</body>
+</html>

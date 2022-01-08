@@ -67,7 +67,7 @@
         <div class="Error" id="Error"></div>
         <div id="post_count" class="form-container rounded-corners third-input">
             <div id="post_count_header">Η εισαγωγή των στοιχείων ήταν επιτυχής</div>
-            <input type="button" id="results" value="Δείτε τους νικητές" onclick="window.open('results/results.html', '_blank', 'toolbar=0,location=0,menubar=0');">
+            <input type="button" id="results" value="Δείτε τους νικητές" onclick="window.open('results.html', '_blank', 'toolbar=0,location=0,menubar=0,width=1200,height=700');">
         </div>
     </div>
     <footer>
@@ -106,10 +106,8 @@
 
         // calls final_form and send_data functions after the data collection is completed
         function post_count() {
-            alert(n_2003);
-            alert(winners);
-            final_form();
             send_data();
+            final_form();
         }
 
         // updates the count for the input button
@@ -122,7 +120,7 @@
         function proccess(username, year) {
             if (year == 2003) {
                 n_2003++;
-                winners += username + "\n";
+                winners += username + "<br>";
             }
         }
 
