@@ -22,7 +22,7 @@
         mysqli_set_charset($conn, "utf8");
         
         //Δημιουργία ερωτήματος
-        $sql = "INSERT INTO `supernova-review`(`name`, `release-date`, `review-by`, `comments`, `stars` ) VALUES
+        $sql = "INSERT INTO `supernova_review`(`name`, `release-date`, `review-by`, `comments`, `stars` ) VALUES
         ('".$_POST['name']."','".$_POST['release_date']."', '".$_POST['review-by']."', '".$_POST['comments']."','".$_POST['stars']."') ;";
         
         //εκτέλεση ερωτήματος στη βάση

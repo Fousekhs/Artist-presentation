@@ -8,6 +8,21 @@ body {
     font-size: 18px;
 }
 
+.patric {
+    height: 30px;
+    width: 30px;
+}
+
+.patric-half {
+    height: 30px;
+    width: 14px;
+}
+
+.patric-down {
+    height:30px;
+    width: 24px;
+}
+
 .antonis {
     max-width: 350px;
     margin: 0 auto;
